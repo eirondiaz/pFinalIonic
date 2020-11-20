@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.page.html',
   styleUrls: ['./signin.page.scss'],
 })
-export class SigninPage implements OnInit {
+export class SigninPage {
 
-  constructor() { }
+  loginForm: FormGroup
 
-  ngOnInit() {
+  constructor(private _builder: FormBuilder) { 
+    this.loginForm = this._builder.group({
+      correo: ['', Validators.compose([Validators.email, Validators.required])],
+      clave: ['', Validators.required]
+    })
   }
 
+  onSubmit(values) {
+    console.log(values)
+    this.loginForm.reset()
+  }
 }
