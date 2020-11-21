@@ -11,8 +11,18 @@
   <ion-card style="margin-top: 0;">
     <ion-card-content>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" >
-        <ion-input formControlName="correo" placeholder="Correo"></ion-input>
-        <ion-input formControlName="clave" type="password" placeholder="Password"></ion-input>
+        <div class="grid-container">
+          <div>
+            <ion-icon name="mail" class="icon"></ion-icon>
+          </div>
+          <ion-input formControlName="correo" placeholder="Correo"></ion-input>      
+        </div>
+        <div class="grid-container">
+          <div>
+            <ion-icon name="lock-closed" class="icon"></ion-icon>
+          </div>
+          <ion-input formControlName="clave" type="password" placeholder="Password"></ion-input>
+        </div>
         <ion-button [disabled]="loginForm.invalid" type="submit" expand="block" shape="round">Iniciar Sesión</ion-button>
       </form>
       <p class="mt-3">No tienes una cuenta aún? <b><a routerLink="/signup" style="color: #00C8D5;">Registrate!</a></b></p>

@@ -5,13 +5,14 @@
 </ion-header>
 
 <ion-content fullscreen="true">
+  <ion-img src="assets/img/registro.svg"></ion-img>
   <ion-card>
     <ion-card-content>
       <form [formGroup]="registroForm" (ngSubmit)="onSubmit(registroForm.value)">
         <ion-input type="text" formControlName="nombre" placeholder="Nombre"></ion-input>
         <ion-input type="text" formControlName="correo" placeholder="Correo"></ion-input>
         <ion-input type="password" formControlName="clave" placeholder="Clave"></ion-input>
-        <ion-input type="password" placeholder="Repetir clave"></ion-input>
+        <ion-input type="password" formControlName="repclave" placeholder="Repetir clave"></ion-input>
         <ion-button expand="block" shape="round" type="submit" [disabled]="registroForm.invalid">
           Registrar
         </ion-button>

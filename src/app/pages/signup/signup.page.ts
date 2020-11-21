@@ -15,6 +15,7 @@ export class SignupPage {
       nombre: ['', Validators.required],
       correo: ['', Validators.compose([Validators.email, Validators.required])],
       clave: ['', Validators.required],
+      repclave: ['', Validators.required]
     })
   }
 
