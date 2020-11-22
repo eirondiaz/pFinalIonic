@@ -1,9 +1,32 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>changepass</ion-title>
+<ion-header class="ion-no-border">
+  
+  <ion-toolbar style="color: #00C8D5;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/profile" style="color: #00C8D5;"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cambiar Contraseña</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen="true">
+  <ion-img src="assets\img\pass.svg"></ion-img>
+  <ion-card style="margin-top: 10;">
+    <ion-card-content>
+     <form>
+       <div class="grid-container">
+        <div>
+          <ion-input name="oldPass" placeholder="Contraseña Actual"></ion-input>
+        </div>
+        <div>
+          <ion-input name="newPass" placeholder="Nueva Contraseña"></ion-input>
+        </div>
+        <div>
+          <ion-input name="reNewPass" placeholder="Repetir Nueva Contraseña"></ion-input>
+        </div>
+        <ion-button type="submit" expand="block" shape="round">Guardar Cambios</ion-button>
+       </div>
+     </form>
 
+    </ion-card-content>
+  </ion-card>
 </ion-content>
