@@ -31,6 +31,11 @@ const routes: Routes = [
     path: 'changepass',
     loadChildren: () => import('./pages/changepass/changepass.module').then( m => m.ChangepassPageModule)
   },
+  {
+    path: 'updatedata',
+    loadChildren: () => import('./pages/updatedata/updatedata.module').then( m => m.UpdatedataPageModule)
+  },
+
 ];
 
 @NgModule({

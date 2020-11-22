@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border">
+  
+  <ion-toolbar style="color: #00C8D5;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/profile" style="color: #00C8D5;"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Modificar Datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-img src="assets\img\update.svg"></ion-img>
+  <p style="margin-left: 95px;">Modificar Credenciales</p>
+  <ion-card style="margin-top: 2;">
+    <ion-card-content>
+     <form>
+       <div class="grid-container">
+        <div>
+          <ion-input name="name" placeholder="Nombre"></ion-input>
+        </div>
+        <div>
+          <ion-input name="email" placeholder="Correo Electronico"></ion-input>
+        </div>
+        <ion-button type="submit" expand="block" shape="round">Modificar</ion-button>
+       </div>
+     </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
