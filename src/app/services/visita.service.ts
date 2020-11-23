@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class VisitaService {
 
-  URL:string = 'http://localhost:8000/consulta'
+  URL:string = 'https://ube4kp.deta.dev/consulta'
 
   constructor(private http: HttpClient) { }
 
