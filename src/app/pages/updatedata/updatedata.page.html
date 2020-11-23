@@ -13,15 +13,15 @@
   <p style="margin-left: 95px;">Modificar Credenciales</p>
   <ion-card style="margin-top: 2;">
     <ion-card-content>
-     <form>
+     <form [formGroup]="dataForm" (ngSubmit)="onSubmit(dataForm.value)">
        <div class="grid-container">
         <div>
-          <ion-input name="name" placeholder="Nombre"></ion-input>
+          <ion-input name="name" formControlName="nombre" placeholder="Nombre"></ion-input>
         </div>
         <div>
-          <ion-input name="email" placeholder="Correo Electronico"></ion-input>
+          <ion-input name="email" formControlName="correo" placeholder="Correo Electronico"></ion-input>
         </div>
-        <ion-button type="submit" expand="block" shape="round">Modificar</ion-button>
+        <ion-button type="submit" [disabled]="dataForm.invalid" expand="block" shape="round">Modificar</ion-button>
        </div>
      </form>
     </ion-card-content>

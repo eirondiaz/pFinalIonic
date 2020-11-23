@@ -12,18 +12,18 @@
   <ion-img src="assets\img\pass.svg"></ion-img>
   <ion-card style="margin-top: 10;">
     <ion-card-content>
-     <form>
+     <form [formGroup]="passForm" (ngSubmit)="onSubmit(passForm.value)">
        <div class="grid-container">
         <div>
-          <ion-input name="oldPass" placeholder="Contraseña Actual"></ion-input>
+          <ion-input  type="password" formControlName="clave" name="oldPass" placeholder="Contraseña Actual"></ion-input>
         </div>
         <div>
-          <ion-input name="newPass" placeholder="Nueva Contraseña"></ion-input>
+          <ion-input type="password" formControlName="newclave" name="newPass" placeholder="Nueva Contraseña"></ion-input>
         </div>
         <div>
-          <ion-input name="reNewPass" placeholder="Repetir Nueva Contraseña"></ion-input>
+          <ion-input type="password" formControlName="repclave" name="reNewPass" placeholder="Repetir Nueva Contraseña"></ion-input>
         </div>
-        <ion-button type="submit" expand="block" shape="round">Guardar Cambios</ion-button>
+        <ion-button type="submit" [disabled]="passForm.invalid" expand="block" shape="round">Guardar Cambios</ion-button>
        </div>
      </form>
     </ion-card-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-updatedata',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdatedataPage implements OnInit {
 
-  constructor() { }
+  dataForm: FormGroup
+
+  constructor(private _buider: FormBuilder) { 
+    this.dataForm = this._buider.group({
+      correo: ['', Validators.compose([Validators.email, Validators.required])],
+      nombre: ['', Validators.required]
+    })
+  }
 
   ngOnInit() {
   }
 
+  onSubmit(values) {
+    console.log(values)
+    this.dataForm.reset()
+  }
 }
