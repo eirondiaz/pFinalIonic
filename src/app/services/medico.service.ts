@@ -1,3 +1,4 @@
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,13 +9,23 @@ export class MedicoService {
 
   URL:string = 'https://ube4kp.deta.dev/doctor'
 
-  constructor(private http: HttpClient) { }
+  TOKEN: string
+
+  constructor(
+    private http: HttpClient,
+    private storage: NativeStorage
+  ) { 
+    this.storage.getItem('token').then(
+      data => this.TOKEN = data,
+      error => this.TOKEN = localStorage.getItem('token')
+    )
+  }
 
   updatePassword(data) {
-    return this.http.put<any>(this.URL + '/updatePassword?token=' + localStorage.getItem('token'), data)
+    return this.http.put<any>(this.URL + '/updatePassword?token=' + this.TOKEN, data)
   }
 
   updateEmailName(data) {
-    return this.http.put<any>(this.URL + '/updateEmailName?token=' + localStorage.getItem('token'), data)
+    return this.http.put<any>(this.URL + '/updateEmailName?token=' + this.TOKEN, data)
   }
 }
