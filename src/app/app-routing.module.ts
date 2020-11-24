@@ -42,6 +42,10 @@ const routes: Routes = [
     path: 'showconsulta',
     loadChildren: () => import('./pages/showconsulta/showconsulta.module').then( m => m.ShowconsultaPageModule)
   },
+  {
+    path: 'registrarpaciente',
+    loadChildren: () => import('./pages/registrarpaciente/registrarpaciente.module').then( m => m.RegistrarpacientePageModule)
+  },
 
 
 

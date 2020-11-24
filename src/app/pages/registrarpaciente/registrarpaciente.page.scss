@@ -1,0 +1,32 @@
+ion-content {
+    --background: #F9F9F9;
+}
+
+ion-input {
+    --background: #F3F3F3;
+    margin: 12px 0;
+    border-radius: 25px;
+    text-indent: 20px;
+}
+
+ion-button {
+    --background: #00C8D5;
+    margin-top: 17px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+ion-img {
+    width: 65%; 
+    margin: auto; 
+    margin-right: 45px;
+    margin-top: 15px;
+}
+
+p {
+    color: #050505;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 35px 0;
+    margin-bottom: 0;
+}

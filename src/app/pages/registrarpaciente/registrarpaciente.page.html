@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="color: #00C8D5;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard" style="color: #00C8D5;"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrar Paciente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen="true">
+  <ion-img src="assets/img/addpaciente.svg"></ion-img>
+  <p class="ion-text-center">Registrar Paciente</p>
+  <ion-card>
+    <ion-card-content>
+      <form>
+        <ion-input type="number" placeholder="Cedula"></ion-input>
+        <ion-input type="text" placeholder="Foto"></ion-input>
+        <ion-input type="name" placeholder="Nombre"></ion-input>
+        <ion-input type="lastName" placeholder="Apellido"></ion-input>
+        <ion-input type="sangre" placeholder="Tipo de Sangre"></ion-input>
+        <ion-input type="email" placeholder="Email"></ion-input>
+        <ion-input type="sexo" placeholder="Sexo"></ion-input>
+        <ion-input type="fechaNac" placeholder="Fecha de Nacimiento"></ion-input>
+        <ion-input type="alergias" placeholder="Alergias"></ion-input>
+        <ion-button expand="block" shape="round" type="submit">
+          Registrar Paciente
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
