@@ -1,8 +1,8 @@
 ion-input {
     --background: #F3F3F3;
-    margin: 12px 0;
+    /*margin: 12px 0;
+    text-indent: 20px;*/
     border-radius: 25px;
-    text-indent: 20px;
 }
 
 p {
@@ -24,4 +24,37 @@ ion-img {
     width: 35%; 
     margin: auto; 
     margin-top: 15px;
+}
+
+/*CSS PARA EL ICONO DENTRO DEL INPUT*/
+.grid-container {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    background: #F3F3F3;
+    border-radius: 25px;
+    margin: 12px 0;
+}
+
+.grid-container input{
+    border: none;
+    background:none;
+}
+
+.grid-container input:hover{
+    outline: none;
+}
+
+.grid-container input:focus{        
+    outline: none;
+}
+
+.grid-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container div .icon {
+    font-size: 24px;
+    color: #00C8D5;
 }

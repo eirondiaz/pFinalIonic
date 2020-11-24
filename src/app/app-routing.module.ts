@@ -34,7 +34,11 @@ const routes: Routes = [
   {
     path: 'updatedata',
     loadChildren: () => import('./pages/updatedata/updatedata.module').then( m => m.UpdatedataPageModule)
+  },  {
+    path: 'showallpacientes',
+    loadChildren: () => import('./pages/showallpacientes/showallpacientes.module').then( m => m.ShowallpacientesPageModule)
   },
+
 
 ];
 

@@ -1,5 +1,4 @@
 <ion-header class="ion-no-border">
-  
   <ion-toolbar style="color: #00C8D5;">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/profile" style="color: #00C8D5;"></ion-back-button>
@@ -10,19 +9,23 @@
 
 <ion-content fullscreen="true">
   <ion-img src="assets\img\update.svg"></ion-img>
-  <p style="margin-left: 95px;">Modificar Credenciales</p>
+  <p class="ion-text-center">Modificar datos</p>
   <ion-card style="margin-top: 2;">
     <ion-card-content>
      <form [formGroup]="dataForm" (ngSubmit)="onSubmit(dataForm.value)">
-       <div class="grid-container">
+      <div class="grid-container">
         <div>
-          <ion-input name="name" formControlName="nombre" placeholder="Nombre"></ion-input>
-        </div>
+          <ion-icon name="person" class="icon"></ion-icon>
+        </div>           
+        <ion-input name="name" formControlName="nombre" placeholder="Nombre"></ion-input>
+      </div>
+      <div class="grid-container">
         <div>
-          <ion-input name="email" formControlName="correo" placeholder="Correo Electronico"></ion-input>
+          <ion-icon name="mail" class="icon"></ion-icon>
         </div>
-        <ion-button type="submit" [disabled]="dataForm.invalid" expand="block" shape="round">Modificar</ion-button>
-       </div>
+        <ion-input name="email" formControlName="correo" placeholder="Correo Electronico"></ion-input>
+      </div>
+      <ion-button type="submit" [disabled]="dataForm.invalid" expand="block" shape="round">Modificar</ion-button>
      </form>
     </ion-card-content>
   </ion-card>
