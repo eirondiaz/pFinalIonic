@@ -1,3 +1,5 @@
+import { NotLoggedGuard } from './guards/not-logged.guard';
+import { LoggedGuard } from './guards/logged.guard';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -13,10 +15,12 @@ const routes: Routes = [
   },
   {
     path: 'signin',
+    canActivate: [LoggedGuard],
     loadChildren: () => import('./pages/signin/signin.module').then( m => m.SigninPageModule)
   },
   {
     path: 'signup',
+    canActivate: [LoggedGuard],
     loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
   },
   {
@@ -34,7 +38,8 @@ const routes: Routes = [
   {
     path: 'updatedata',
     loadChildren: () => import('./pages/updatedata/updatedata.module').then( m => m.UpdatedataPageModule)
-  },  {
+  },
+  {
     path: 'showallpacientes',
     loadChildren: () => import('./pages/showallpacientes/showallpacientes.module').then( m => m.ShowallpacientesPageModule)
   },
