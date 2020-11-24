@@ -14,6 +14,8 @@ export class SigninPage {
 
   loginForm: FormGroup
 
+  loading: boolean = false
+
   constructor(
     private _builder: FormBuilder, 
     private storage: NativeStorage,
@@ -36,22 +38,30 @@ export class SigninPage {
   }
 
   onSubmit(values) {
+    this.loading = true
     this.authService.login(values).subscribe(
       res => {
         if(res.ok) {
           this.loginForm.reset()
           this.storage.setItem('token', res.token).then(
-            () => this.router.navigate(['/dashboard']),
+            () => {
+              this.loading = false
+              this.router.navigate(['/dashboard'])
+            },
             error => {
               if(error === 'cordova_not_available') {
                 localStorage.setItem('token', res.token)
+                this.loading = false
                 this.router.navigate(['/dashboard'])
               }
             }
           )
         }
       },
-      error => this.createToast(error.error.detail)
+      error => {
+        this.loading = false
+        this.createToast(error.error.detail)
+      }
     )
   }
 }

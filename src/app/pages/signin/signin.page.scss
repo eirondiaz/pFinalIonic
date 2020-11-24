@@ -28,6 +28,11 @@ ion-img {
     margin: 12px 25px 0 25px;
 }
 
+ion-progress-bar {
+    --progress-background: #00C8D5;
+    --background: rgb(207, 207, 207);
+}
+
 /*CSS PARA EL ICONO DENTRO DEL INPUT*/
 .grid-container {
     display: grid;

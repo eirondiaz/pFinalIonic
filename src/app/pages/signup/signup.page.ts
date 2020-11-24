@@ -14,6 +14,8 @@ export class SignupPage {
 
   registroForm: FormGroup
 
+  loading: boolean = false
+
   constructor(
     private _builder: FormBuilder,
     private storage: NativeStorage,
@@ -38,7 +40,9 @@ export class SignupPage {
   }
 
   onSubmit(values) {
+    this.loading = true
     if (values.clave !== values.repclave) {
+      this.loading = false
       this.createToast('Las contraseñas no coinciden')
     }
     else {
@@ -48,19 +52,25 @@ export class SignupPage {
             this.registroForm.reset()
 
             this.storage.setItem('token', res.token).then(
-              () => this.router.navigate(['/dashboard']),
+              () => {
+                this.loading = false
+                this.router.navigate(['/dashboard'])
+              },
               error => {
                 localStorage.setItem('token', res.token)
+                this.loading = false
                 this.router.navigate(['/dashboard'])
               }
             )
           }
           else {
+            this.loading = false
             this.createToast('Ha ocurrido un error')
           }
         },
         error => {
           console.log(error)
+          this.loading = false
           this.createToast('Ha ocurrido un error')
         }
       )
