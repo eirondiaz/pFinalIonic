@@ -38,7 +38,11 @@ const routes: Routes = [
   {
     path: 'showallpacientes',
     loadChildren: () => import('./pages/showallpacientes/showallpacientes.module').then( m => m.ShowallpacientesPageModule)
+  },  {
+    path: 'showconsulta',
+    loadChildren: () => import('./pages/showconsulta/showconsulta.module').then( m => m.ShowconsultaPageModule)
   },
+
 
 
 ];
