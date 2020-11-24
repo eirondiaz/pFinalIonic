@@ -1,6 +1,9 @@
+import { AuthService } from './../../services/auth.service';
+import { ToastController } from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { NativeStorage } from '@ionic-native/native-storage/ngx'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +16,10 @@ export class SignupPage {
 
   constructor(
     private _builder: FormBuilder,
-    private storage: NativeStorage
+    private storage: NativeStorage,
+    private toastCtrl: ToastController,
+    private authService: AuthService,
+    private router: Router
   ) { 
     this.registroForm = this._builder.group({
       nombre: ['', Validators.required],
@@ -23,13 +29,41 @@ export class SignupPage {
     })
   }
 
+  async createToast(msg: string) {
+    const toast = await this.toastCtrl.create({
+      message: msg,
+      duration: 3000
+    })
+    await toast.present()
+  }
+
   onSubmit(values) {
-    console.log(values)
-    this.registroForm.reset()
-    
-    this.storage.getItem('token').then(
-      data => {
-      console.log(data)
-    });
+    if (values.clave !== values.repclave) {
+      this.createToast('Las contraseñas no coinciden')
+    }
+    else {
+      this.authService.registrar(values).subscribe(
+        res => {
+          if (res.ok) {
+            this.registroForm.reset()
+
+            this.storage.setItem('token', res.token).then(
+              () => this.router.navigate(['/dashboard']),
+              error => {
+                localStorage.setItem('token', res.token)
+                this.router.navigate(['/dashboard'])
+              }
+            )
+          }
+          else {
+            this.createToast('Ha ocurrido un error')
+          }
+        },
+        error => {
+          console.log(error)
+          this.createToast('Ha ocurrido un error')
+        }
+      )
+    }
   }
 }
