@@ -1,4 +1,5 @@
 <ion-header class="ion-no-border">
+  <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
   <ion-toolbar style="color: #00C8D5;">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/dashboard" style="color: #00C8D5;"></ion-back-button>
@@ -12,30 +13,24 @@
   <p class="ion-text-center">Registrar Visita / Consulta</p>
   <ion-card>
     <ion-card-content>
-      <form>
-        <ion-item>
+      <form [formGroup]="consultaForm" (submit)="onSubmit(consultaForm.value)">
+        <ion-item lines="none">
           <ion-label>Paciente</ion-label>
-          <ion-select value="0">
-            <ion-select-option value="01">Lens Almonte</ion-select-option>
-            <ion-select-option value="02">Erick Emmanuel</ion-select-option>
-            <ion-select-option value="03">Oscar Mora</ion-select-option>
-            <ion-select-option value="04">Felix Jose</ion-select-option>
-            <ion-select-option value="05">Eiron Diaz</ion-select-option>
-            <ion-select-option value="06">Gabriel Geronimo</ion-select-option>
-            <ion-select-option value="07">Daniel Tejeda</ion-select-option>
+          <ion-select value="0" formControlName="id_paciente">
+            <ion-select-option *ngFor="let pac of pacientList" value={{pac.id}}>{{pac.nombre}}</ion-select-option>
           </ion-select>
         </ion-item>
-        <ion-item>
+        <ion-item lines="none">
           <!-- <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2021-12-31" value="2020-11-23T15:03:46.789"></ion-datetime> -->
-          <ion-datetime displayFormat="DD/MM/YYYY" min="2020-11-23" max="2021" placeholder="Fecha"></ion-datetime>
-      </ion-item>
-        <ion-input type="text" placeholder="Motivo de la consulta"></ion-input>
-        <ion-input type="number" placeholder="Número de seguro."></ion-input>
-        <ion-input type="text" placeholder="Monto pagado"></ion-input>
-        <ion-input type="text" placeholder="Diagnóstico"></ion-input>
-        <ion-input type="text" placeholder="Nota"></ion-input>
-        <ion-input type="file" placeholder="Evidencia Consulta"></ion-input>
-        <ion-button expand="block" shape="round" type="submit">
+          <ion-datetime formControlName="fecha" displayFormat="DD/MM/YYYY" min="2020-11-23" max="2021" placeholder="Fecha"></ion-datetime>
+        </ion-item>
+        <ion-input type="text" formControlName="motivo" placeholder="Motivo de la consulta"></ion-input>
+        <ion-input type="number" formControlName="no_seguro" placeholder="Número de seguro."></ion-input>
+        <ion-input type="number" formControlName="monto" placeholder="Monto pagado"></ion-input>
+        <ion-input type="text" formControlName="diagnostico" placeholder="Diagnóstico"></ion-input>
+        <ion-input type="text" formControlName="nota" placeholder="Nota"></ion-input>
+        <ion-input type="text" formControlName="foto_evidencia" placeholder="Evidencia Consulta"></ion-input>
+        <ion-button expand="block" [disabled]="consultaForm.invalid" shape="round" type="submit">
           Registrar
         </ion-button>
       </form>

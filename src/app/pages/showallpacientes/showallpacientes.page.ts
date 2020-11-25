@@ -1,3 +1,4 @@
+import { PacienteService } from './../../services/paciente.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowallpacientesPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private pacienteService: PacienteService
+  ) { }
 
   ngOnInit() {
+    this.getAllPacientes()
   }
 
+  getAllPacientes() {
+    this.pacienteService.getAllPatients().subscribe(
+      res => console.log(res.data),
+      error => console.log(error)
+    )
+  }
 }

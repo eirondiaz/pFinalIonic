@@ -11,6 +11,11 @@
  ion-content {
     --background: #F9F9F9;
 }
+
+ion-progress-bar {
+    --progress-background: #00C8D5;
+    --background: rgb(207, 207, 207);
+}
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
 

@@ -7,5 +7,6 @@ export interface Paciente {
     tipo_sangre?: string
     email?: string
     sexo?: string
+    fecha_nac?: string
     alergias?: string
 }
