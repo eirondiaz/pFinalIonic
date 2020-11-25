@@ -1,27 +1,26 @@
-ion-icon {
+.pacientName {
     color: #00C8D5;
+    font-size: 110%;
 }
 
-.col-8 {
-    position: absolute;
-    left: 20%;
+#btn{
+    width: 85px;
+    height: 25px;
+    font-size: 12px;
+}
+.profession{
+    font-size: 13px;
+}
+.labels{
+    margin-right: 2%;
+    font-size: 12px;
+    height: 100%;
 }
 
-.apellido {
-    color: #00C8D5;
-    font-size: 14px;
+.icons{
+    margin-right: 1%;
+    font-size: 18px;
 }
-
-.btn {
-    background-color: #00C8D5;
-    color: #fff;
-    border-radius: 25px;
-    width: 25%;
-}
-
-.sangre {
-    margin-left: 2%;
-    color: rgb(196, 196, 196);
+.labelcontainer{
     display: inline-block;
-    background-color: blue;
 }
