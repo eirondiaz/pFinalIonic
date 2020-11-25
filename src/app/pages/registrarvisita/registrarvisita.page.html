@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="color: #00C8D5;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard" style="color: #00C8D5;"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrar Visita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-img src="assets/img/visitas.svg"></ion-img>
+  <p class="ion-text-center">Registrar Visita / Consulta</p>
+  <ion-card>
+    <ion-card-content>
+      <form>
+        <ion-item>
+          <ion-label>Paciente</ion-label>
+          <ion-select value="0">
+            <ion-select-option value="01">Lens Almonte</ion-select-option>
+            <ion-select-option value="02">Erick Emmanuel</ion-select-option>
+            <ion-select-option value="03">Oscar Mora</ion-select-option>
+            <ion-select-option value="04">Felix Jose</ion-select-option>
+            <ion-select-option value="05">Eiron Diaz</ion-select-option>
+            <ion-select-option value="06">Gabriel Geronimo</ion-select-option>
+            <ion-select-option value="07">Daniel Tejeda</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <!-- <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2021-12-31" value="2020-11-23T15:03:46.789"></ion-datetime> -->
+          <ion-datetime displayFormat="DD/MM/YYYY" min="2020-11-23" max="2021" placeholder="Fecha"></ion-datetime>
+      </ion-item>
+        <ion-input type="text" placeholder="Motivo de la consulta"></ion-input>
+        <ion-input type="number" placeholder="Número de seguro."></ion-input>
+        <ion-input type="text" placeholder="Monto pagado"></ion-input>
+        <ion-input type="text" placeholder="Diagnóstico"></ion-input>
+        <ion-input type="text" placeholder="Nota"></ion-input>
+        <ion-input type="file" placeholder="Evidencia Consulta"></ion-input>
+        <ion-button expand="block" shape="round" type="submit">
+          Registrar
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
