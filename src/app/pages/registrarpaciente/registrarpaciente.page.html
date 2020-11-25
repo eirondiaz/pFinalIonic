@@ -15,7 +15,6 @@
     <ion-card-content>
       <form [formGroup]="pacienteForm" (submit)="onSubmit(pacienteForm.value)">
         <ion-input type="number" formControlName="cedula" placeholder="Cedula"></ion-input>
-        <ion-input type="text" formControlName="foto" placeholder="Foto"></ion-input>
         <ion-input type="name" formControlName="nombre" placeholder="Nombre"></ion-input>
         <ion-input type="lastName" formControlName="apellido" placeholder="Apellido"></ion-input>
         <ion-input type="sangre" formControlName="tipo_sangre" placeholder="Tipo de Sangre"></ion-input>
@@ -26,6 +25,8 @@
           <ion-datetime formControlName="fecha_nac" displayFormat="MM DD YYYY" value="1994-12-15"></ion-datetime>
         </ion-item>
         <ion-input type="alergias" formControlName="alergias" placeholder="Alergias"></ion-input>
+        <ion-button class="but" expand="block" (click)="createAlert()">Tomar foto</ion-button>
+        <img [src]="image" *ngIf="image">
         <ion-button expand="block" [disabled]="pacienteForm.invalid" shape="round" type="submit">
           Registrar Paciente
         </ion-button>

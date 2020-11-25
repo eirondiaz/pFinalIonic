@@ -9,6 +9,14 @@ ion-input {
     text-indent: 20px;
 }
 
+.but {
+    --background: #F3F3F3;
+    margin: 12px 0;
+    --border-radius: 25px;
+    color: #000;
+    font-weight: lighter;
+}
+
 ion-item {
     --background: #F3F3F3;
     border-radius: 25px;

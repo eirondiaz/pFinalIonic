@@ -17,7 +17,9 @@ export class PacienteService {
   ) { 
     this.storage.getItem('token').then(
       data => this.TOKEN = data,
-      error => this.TOKEN = localStorage.getItem('token')
+      error => {
+        this.TOKEN = localStorage.getItem('token')
+      }
     )
   }
 
@@ -25,8 +27,9 @@ export class PacienteService {
     return this.http.post<any>(this.URL + '/create?token=' + this.TOKEN, data)
   }
 
+  //DEBO ARREGALR LO DEL TOKEN CON LA VARIABLE THIS.TOKEN
   getAllPatients() {
-    return this.http.get<any>(this.URL + '/patients?token=' + this.TOKEN)
+    return this.http.get<any>(this.URL + '/patients?token=' + localStorage.getItem('token'))
   }
 
   getPatientById(id) {
