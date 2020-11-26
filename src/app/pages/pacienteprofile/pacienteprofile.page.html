@@ -1,42 +1,54 @@
 <ion-header class="ion-no-border">
+  <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
   <ion-toolbar style="color: #00C8D5;">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/dashboard" style="color: #00C8D5;"></ion-back-button>
+      <ion-back-button defaultHref="/showallpacientes" style="color: #00C8D5;"></ion-back-button>
     </ion-buttons>
-    <ion-title>Paciente Perfil</ion-title>
+    <ion-title>{{paciente.nombre}}</ion-title>
   </ion-toolbar>
 </ion-header>
-
 
 <ion-content fullscreen="true">
   <ion-card>
     <ion-card-content>
       <ion-img src="assets/img/pacienteprofile.svg"></ion-img>
-      <span class="profile ion-text-center ">Rossy Abreu</span>
+      <p class="profile ion-text-center">{{paciente.nombre}} {{paciente.apellido}}</p>
     </ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-card-content>
       <form>
-        <ion-input type="number" placeholder="Cedula"></ion-input>
-        <ion-input type="name" placeholder="Nombre"></ion-input>
-        <ion-input type="text" placeholder="Apellido"></ion-input>
-        <ion-input type="text" placeholder="Tipo de Sangre"></ion-input>
-        <ion-input type="email" placeholder="Email"></ion-input>
-        <ion-input type="text"  placeholder="Sexo"></ion-input>
-        <ion-input type="text"  placeholder="Fecha de Nacimiento"></ion-input>
-        <ion-input type="alergias" placeholder="Alergias"></ion-input>
+        <ion-input type="number" [(ngModel)]="paciente.cedula" [readonly]="!editar" placeholder="Cedula" name="cedula"></ion-input>
+        <ion-input type="name" [(ngModel)]="paciente.nombre" [readonly]="!editar" placeholder="Nombre" name="nombre"></ion-input>
+        <ion-input type="text" [(ngModel)]="paciente.apellido" [readonly]="!editar" placeholder="Apellido" name="apellido"></ion-input>
+        <ion-item lines="none">
+          <ion-label>Tipo de sangre</ion-label>
+          <ion-select value="0" [(ngModel)]="paciente.tipo_sangre" placeholder="Elegir" name="blood">
+            <ion-select-option value="A+">A+</ion-select-option>
+            <ion-select-option value="B+">B+</ion-select-option>
+            <ion-select-option value="O+">O+</ion-select-option>
+            <ion-select-option value="AB+">AB+</ion-select-option>
+            <ion-select-option value="A-">A-</ion-select-option>
+            <ion-select-option value="B-">B-</ion-select-option>
+            <ion-select-option value="O-">O-</ion-select-option>
+            <ion-select-option value="AB-">AB-</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-input type="email" [(ngModel)]="paciente.email" [readonly]="!editar" placeholder="Email" name="email"></ion-input>
+        <ion-input type="text" [(ngModel)]="paciente.sexo" [readonly]="!editar" placeholder="Sexo" name="sexo"></ion-input>
+        <ion-input type="text" [(ngModel)]="paciente.fecha_nac" [readonly]="!editar" placeholder="Fecha de Nacimiento" name="fecha"></ion-input>
+        <ion-input type="text" [(ngModel)]="paciente.alergias" [readonly]="!editar" placeholder="Alergias" name="alergias"></ion-input>
         <ion-grid>
           <ion-row>
             <ion-col size="6">
-              <ion-button  expand="block" shape="round" type="submit">
+              <ion-button expand="block" shape="round" type="submit">
                 Editar
               </ion-button>
             </ion-col>
             <ion-col>
-              <ion-button expand="block" color="danger" shape="round">
-                Cancelar
+              <ion-button (click)="deletepaciente()" expand="block" color="danger" shape="round">
+                Eliminar
               </ion-button>
             </ion-col>
           </ion-row>

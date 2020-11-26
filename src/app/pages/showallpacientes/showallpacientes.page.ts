@@ -19,6 +19,10 @@ export class ShowallpacientesPage implements OnInit {
     this.getAllPacientes()
   }
 
+  ionViewDidEnter(){
+    this.getAllPacientes()
+  }
+
   getAllPacientes() {
     this.pacienteService.getAllPatients().subscribe(
       res => {

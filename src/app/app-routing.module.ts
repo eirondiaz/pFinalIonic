@@ -61,7 +61,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registrarvisita/registrarvisita.module').then( m => m.RegistrarvisitaPageModule)
   },
   {
-    path: 'pacienteprofile',
+    path: 'pacienteprofile/:id',
     canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/pacienteprofile/pacienteprofile.module').then( m => m.PacienteprofilePageModule)
   }

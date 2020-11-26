@@ -33,7 +33,7 @@ export class PacienteService {
   }
 
   getPatientById(id) {
-    return this.http.get<any>(this.URL + '/' + id)
+    return this.http.get<any>(this.URL + '/' + id + '?token=' + this.TOKEN)
   }
 
   updatePatient(id, data) {
@@ -41,6 +41,6 @@ export class PacienteService {
   }
 
   deletePatient(id) {
-    return this.http.delete<any>(this.URL + '/' + id)
+    return this.http.delete<any>(this.URL + '/' + id + '?token=' + this.TOKEN)
   }
 }
