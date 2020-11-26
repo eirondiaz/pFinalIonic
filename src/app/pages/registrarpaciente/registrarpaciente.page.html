@@ -16,12 +16,12 @@
       <form [formGroup]="pacienteForm" (submit)="onSubmit(pacienteForm.value)">
         <ion-input type="number" formControlName="cedula" placeholder="Cedula"></ion-input>
         <ion-input type="name" formControlName="nombre" placeholder="Nombre"></ion-input>
-        <ion-input type="lastName" formControlName="apellido" placeholder="Apellido"></ion-input>
-        <ion-input type="sangre" formControlName="tipo_sangre" placeholder="Tipo de Sangre"></ion-input>
+        <ion-input type="text" formControlName="apellido" placeholder="Apellido"></ion-input>
+        <ion-input type="text" formControlName="tipo_sangre" placeholder="Tipo de Sangre"></ion-input>
         <ion-input type="email" formControlName="email" placeholder="Email"></ion-input>
-        <ion-input type="sexo" formControlName="sexo" placeholder="Sexo"></ion-input>
+        <ion-input type="text" formControlName="sexo" placeholder="Sexo"></ion-input>
         <ion-item lines="none">
-          <ion-label>Fecha de nacimiento</ion-label>
+          <ion-label>Fecha de Nacimiento</ion-label>
           <ion-datetime formControlName="fecha_nac" displayFormat="MM DD YYYY" value="1994-12-15"></ion-datetime>
         </ion-item>
         <ion-input type="alergias" formControlName="alergias" placeholder="Alergias"></ion-input>

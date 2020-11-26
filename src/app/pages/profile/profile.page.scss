@@ -1,0 +1,34 @@
+ion-content {
+    --background: #F9F9F9;
+}
+
+ion-img {
+    width: 45%; 
+    margin: auto; 
+    margin-top: 8px;
+}
+
+.cerrar {
+    color: #050505;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.profile{
+    color: #050505;
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 25%;
+    margin-bottom: auto;
+}
+
+.gmail{
+    color: #050505;
+    font-size: 15px;
+    margin-left: 75%;
+    margin-bottom: auto;
+}
+
+*{
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}

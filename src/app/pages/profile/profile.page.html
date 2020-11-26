@@ -1,12 +1,41 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
+  <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
+  <ion-toolbar style="color: #00C8D5;">
     <ion-buttons slot="start">
-      <ion-back-button routerLink="/dashboard" text="Dashboard" icon="chevron-back-outline"></ion-back-button>
+      <ion-back-button defaultHref="/dashboard" style="color: #00C8D5;"></ion-back-button>
     </ion-buttons>
+    <ion-title>Mi Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content fullscreen="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-img src="assets/img/profile.svg"></ion-img>
+      <span class="profile">Lens Almonte</span>
+      <!-- <span class="gmail" >lensalmonte10@gmail.com</span> -->
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item routerLink="/updatedata">
+        <ion-icon name="reader-outline"></ion-icon>
+        <ion-text class="ion-margin-start">Modificar Datos</ion-text>
+      </ion-item>
+      <ion-list>
+        <ion-item routerLink="/changepass">
+          <ion-icon  name="lock-open-outline"></ion-icon>
+          <ion-text class="ion-margin-start" >Cambiar Contraseña</ion-text>
+        </ion-item>
+        <ion-input></ion-input>
+        <ion-item class="cerrar" (click)="authService.authLogOut()" >
+          <ion-icon name="log-out-outline"></ion-icon>
+          <ion-text class="ion-margin-start">Cerrar Sesion</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
