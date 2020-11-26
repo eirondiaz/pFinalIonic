@@ -64,9 +64,10 @@ const routes: Routes = [
     path: 'pacienteprofile/:id',
     canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/pacienteprofile/pacienteprofile.module').then( m => m.PacienteprofilePageModule)
-  },  {
-    path: 'showallconsultas',
-    loadChildren: () => import('./pages/showallconsultas/showallconsultas.module').then( m => m.ShowallconsultasPageModule)
+  },
+  {
+    path: 'showallvisitas',
+    loadChildren: () => import('./pages/showallvisitas/showallvisitas.module').then( m => m.ShowallvisitasPageModule)
   }
 
 ];
