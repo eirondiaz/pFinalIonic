@@ -6,7 +6,47 @@
 </ion-header>
 
 <ion-content fullscreen="true">
+  <ion-img src="assets/img/doctor.svg"></ion-img>
+  <p class="ion-text-center">Hola, Dr. Daniel</p>
   <div class="contenedor">
-
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-content routerLink="/registrarpaciente">
+              <ion-icon class="cardicon" name="person-add-outline"></ion-icon>
+              <p class="ion-text-center text">REGISTAR PACIENTES</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card>
+            <ion-card-content routerLink="/registrarvisita">
+              <ion-icon class="cardicon" name="clipboard-outline"></ion-icon>
+              <p class="ion-text-center text">REGISTRAR CONSULTAS</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-content routerLink="/showallpacientes">
+              <ion-icon  class="cardicon" name="man-outline"></ion-icon>
+              <p class="ion-text-center text">VER PACIENTES</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card>
+            <ion-card-content routerLink="/showconsulta">
+              <ion-icon  class="cardicon" name="body-outline"></ion-icon>
+              <p class="ion-text-center text">VER CONSULTAS</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>

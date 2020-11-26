@@ -8,14 +8,22 @@ ion-content {
     margin-right: 7px;
 }
 
+.cardicon{
+    font-size: 45px;
+    color: #00C8D5;
+    justify-content: start;
+    margin-bottom: 10px;
+}
+
 ion-card {
-    --background: #E2F9FB;
+    --background: #ffffff;
+    border-radius: 15px;
 }
 
 .contenedor {
     background-color: #FFFFFF;
     height: 100%;
-    margin-top: 40%;
+    margin-top: 10%;
     border-radius: 30px;
 }
 
@@ -25,4 +33,27 @@ ion-toolbar {
 
 ion-title {
     color: #FFFFFF;
+}
+
+ion-img {
+    width: 35%; 
+    margin: auto; 
+    margin-top: 15px;
+}
+
+p {
+    color: #ffffff;
+    font-weight: lighter;
+    font-size: 24px;
+}
+
+.text{
+    color: #00C8D5;
+    font-weight: lighter;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+*{
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
