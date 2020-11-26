@@ -1,0 +1,39 @@
+ion-content {
+    --background: #F9F9F9;
+}
+
+ion-img {
+    width: 40%; 
+    margin: auto; 
+    margin-top: 8px;
+}
+
+ion-input {
+    --background: #F3F3F3;
+    margin: 12px 0;
+    border-radius: 25px;
+    text-indent: 20px;
+}
+
+ion-item {
+    --background: #F3F3F3;
+    border-radius: 25px;
+}
+
+ion-button {
+    --background: #00C8D5;
+    margin-top: 10px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.profile{
+    color: #050505;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: auto;
+}
+
+*{
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
