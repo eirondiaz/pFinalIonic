@@ -7,7 +7,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 })
 export class VisitaService {
 
-  URL:string = 'https://ube4kp.deta.dev/consulta'
+  URL:string = 'https://n7pec0.deta.dev/consulta'
 
   TOKEN: string
 
