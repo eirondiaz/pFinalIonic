@@ -74,4 +74,51 @@ export class PacienteprofilePage implements OnInit {
     })
     await alert.present()
   }
+
+  async alertForEdit() {
+    const alert = await this.alertCtrl.create({
+      header: 'Editar Paciente',
+      message: 'Deseas editar este paciente?',
+      buttons: [{
+        text: 'Cancelar',
+        role: 'cancel'
+      }, {
+        text: 'Ok',
+        handler: () => {
+          this.loading = true
+          this.pacienteService.updatePatient(this.paciente.id, this.paciente).subscribe(
+            res => {
+              if (res.ok) {
+                this.loading = false
+                this.editar = false
+                console.log(res)
+              }
+              this.loading = false
+            },
+            error => {
+              this.loading = false
+              this.editar = false
+              this.alertForEdit()
+              console.log(error)
+            }
+          )
+        }
+      }]
+    })
+    await alert.present()
+  }
+
+  editarPac() {
+    if (this.editar) {
+      this.alertForEdit()
+    }
+    else {
+      this.editar = true
+    }
+  }
+
+  cancelarEdit() {
+    this.editar = false
+    this.getPacienteById()
+  }
 }

@@ -16,6 +16,8 @@
     </ion-card-content>
   </ion-card>
 
+  <p *ngIf="editar" class="ion-text-center" style="color: #00C8D5; font-weight: bold;">MODO EDICIÓN</p>
+
   <ion-card>
     <ion-card-content>
       <form>
@@ -39,17 +41,26 @@
         <ion-input type="text" [(ngModel)]="paciente.sexo" [readonly]="!editar" placeholder="Sexo" name="sexo"></ion-input>
         <ion-input type="text" [(ngModel)]="paciente.fecha_nac" [readonly]="!editar" placeholder="Fecha de Nacimiento" name="fecha"></ion-input>
         <ion-input type="text" [(ngModel)]="paciente.alergias" [readonly]="!editar" placeholder="Alergias" name="alergias"></ion-input>
+        <p *ngIf="editar" class="ion-text-center" style="color: #a8a8a8;"><i>Actualmente estás en modo edición</i></p>
         <ion-grid>
           <ion-row>
             <ion-col size="6">
-              <ion-button expand="block" shape="round" type="submit">
-                Editar
+              <ion-button (click)="editarPac()" expand="block" shape="round" type="submit">
+                {{editar? 'Confirmar': 'Editar'}}
               </ion-button>
             </ion-col>
             <ion-col>
-              <ion-button (click)="deletepaciente()" expand="block" color="danger" shape="round">
-                Eliminar
-              </ion-button>
+              <ng-container *ngIf="!editar; else cancelar">
+                <ion-button (click)="deletepaciente()" expand="block" color="danger" shape="round">
+                  Eliminar
+                </ion-button>
+              </ng-container>
+              
+              <ng-template #cancelar>     
+                <ion-button (click)="cancelarEdit()" expand="block" color="danger" shape="round">
+                  Cancelar
+                </ion-button>
+              </ng-template>
             </ion-col>
           </ion-row>
         </ion-grid>

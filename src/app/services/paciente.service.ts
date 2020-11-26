@@ -37,7 +37,7 @@ export class PacienteService {
   }
 
   updatePatient(id, data) {
-    return this.http.put<any>(this.URL + '/' + id, data)
+    return this.http.put<any>(this.URL + '/' + id + '?token=' + this.TOKEN, data)
   }
 
   deletePatient(id) {
