@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/dashboard" style="color: #00C8D5;"></ion-back-button>
     </ion-buttons>
-    <ion-title>Lista de Consultas</ion-title>
+    <ion-title>Lista de Visitas</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -35,9 +35,6 @@
   </ion-segment>
 
   <ion-list>
-    <app-cardvisita></app-cardvisita>
-    <app-cardvisita></app-cardvisita>
-    <app-cardvisita></app-cardvisita>
-    <app-cardvisita></app-cardvisita>
+    <app-cardvisita [data]="visit" *ngFor="let visit of visitaList"></app-cardvisita>
   </ion-list>
 </ion-content>

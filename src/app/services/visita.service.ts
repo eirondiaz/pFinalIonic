@@ -26,7 +26,7 @@ export class VisitaService {
   }
 
   getAllVisitas() {
-    return this.http.get<any>(this.URL + '/?token=' + this.TOKEN)
+    return this.http.get<any>(this.URL + '?token=' + this.TOKEN)
   }
 
   getVisitaById(id) {

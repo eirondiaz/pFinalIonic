@@ -10,10 +10,10 @@
           <div class="row">
             <div class="col-6">
               <div>
-                <ion-text class="pacientName"><b>Nombre</b></ion-text>
+                <ion-text class="pacientName"><b>{{visita.motivo}}</b></ion-text>
               </div>
               <div>
-                <ion-text class="profession"><b>Apellido</b></ion-text>
+                <ion-text class="profession"><b>{{visita.nota}}</b></ion-text>
               </div>
             </div>
             <div class="col-6">
@@ -24,13 +24,13 @@
           </div>
         <div class="mt-1">
             <ion-icon class="icons" name="calendar-outline"></ion-icon>
-            <ion-label class="labels">Fecha</ion-label>
+            <ion-label class="labels">{{visita.nota}}</ion-label>
 
             <ion-icon name="water-outline"></ion-icon>
-            <ion-label class="labels">TipoS</ion-label>
+            <ion-label class="labels">{{visita.no_seguro}}</ion-label>
 
             <ion-icon class="icons" name="cash-outline"></ion-icon>
-            <ion-label class="labels">200</ion-label>
+            <ion-label class="labels">{{visita.monto}}</ion-label>
         </div>
 
         </div>
