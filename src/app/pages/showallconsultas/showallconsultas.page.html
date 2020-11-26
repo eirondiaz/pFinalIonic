@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="color: #00C8D5;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard" style="color: #00C8D5;"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista de Consultas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" class="ion-no-padding">
+  <!--<ion-row style="margin-top: 32px;">
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>-->
+  
+  <ion-segment>
+    <ion-segment-button value="friends">
+      <ion-label>Friends</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="enemies">
+      <ion-label>Enemies</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list>
+    <app-cardconsulta></app-cardconsulta>
+    <app-cardconsulta></app-cardconsulta>
+    <app-cardconsulta></app-cardconsulta>
+    <app-cardconsulta></app-cardconsulta>
+  </ion-list>
+</ion-content>
