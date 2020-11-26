@@ -17,7 +17,20 @@
         <ion-input type="number" formControlName="cedula" placeholder="Cedula"></ion-input>
         <ion-input type="name" formControlName="nombre" placeholder="Nombre"></ion-input>
         <ion-input type="text" formControlName="apellido" placeholder="Apellido"></ion-input>
-        <ion-input type="text" formControlName="tipo_sangre" placeholder="Tipo de Sangre"></ion-input>
+        <!--<ion-input type="text" formControlName="tipo_sangre" placeholder="Tipo de Sangre"></ion-input>-->
+        <ion-item lines="none">
+          <ion-label>Tipo de sangre</ion-label>
+          <ion-select value="0" formControlName="tipo_sangre" placeholder="Elegir">
+            <ion-select-option value="A+">A+</ion-select-option>
+            <ion-select-option value="B+">B+</ion-select-option>
+            <ion-select-option value="O+">O+</ion-select-option>
+            <ion-select-option value="AB+">AB+</ion-select-option>
+            <ion-select-option value="A-">A-</ion-select-option>
+            <ion-select-option value="B-">B-</ion-select-option>
+            <ion-select-option value="O-">O-</ion-select-option>
+            <ion-select-option value="AB-">AB-</ion-select-option>
+          </ion-select>
+        </ion-item>
         <ion-input type="email" formControlName="email" placeholder="Email"></ion-input>
         <ion-input type="text" formControlName="sexo" placeholder="Sexo"></ion-input>
         <ion-item lines="none">

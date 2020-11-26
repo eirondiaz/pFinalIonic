@@ -1,22 +1,19 @@
   <ion-card>
     <ion-card-content>
-
-
         <div class="row">
           <div class="col-3">
             <ion-avatar>
-              <ion-img src="../../../assets/img/FotoPrueba.jpg">
-              </ion-img>
+              <ion-img src="../../../assets/img/FotoPrueba.jpg"></ion-img>
             </ion-avatar>
           </div>
           <div class="col-9">
             <div class="row">
               <div class="col-6">
                 <div>
-                  <ion-text class="pacientName"><b>Jhon Smith</b></ion-text>
+                  <ion-text class="pacientName"><b>{{paciente.nombre}}</b></ion-text>
                 </div>
                 <div>
-                  <ion-text class="profession"><b>Gynecologist</b></ion-text>
+                  <ion-text class="profession"><b>{{paciente.apellido}}</b></ion-text>
                 </div>
               </div>
               <div class="col-6">
@@ -27,10 +24,10 @@
             </div>
           <div class="mt-1">
               <ion-icon class="icons" name="calendar-outline"></ion-icon>
-              <ion-label class="labels">20 Feb 2020</ion-label>
+              <ion-label class="labels">{{paciente.fecha_nac | date}}</ion-label>
 
-              <ion-icon class="icons" name="time-outline"></ion-icon>
-              <ion-label class="labels">2 Hours</ion-label>
+              <ion-icon name="water-outline"></ion-icon>
+              <ion-label class="labels">{{paciente.tipo_sangre}}</ion-label>
 
               <ion-icon class="icons" name="cash-outline"></ion-icon>
               <ion-label class="labels">200</ion-label>

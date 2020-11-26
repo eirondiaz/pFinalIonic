@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content fullscreen="true" class="ion-no-padding">
-  <ion-row style="margin-top: 32px;">
+  <!--<ion-row style="margin-top: 32px;">
     <ion-col>
       <ion-card>
         <ion-card-content>
@@ -23,8 +23,18 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-  </ion-row>
+  </ion-row>-->
+  
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="friends">
+      <ion-label>Friends</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="enemies">
+      <ion-label>Enemies</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
   <ion-list>
-    <app-cardpaciente routerLink="/pacienteprofile" *ngFor="let pac of patientsList"></app-cardpaciente>
+    <app-cardpaciente [data]="pac" routerLink="/pacienteprofile" *ngFor="let pac of patientsList"></app-cardpaciente>
   </ion-list>
 </ion-content>

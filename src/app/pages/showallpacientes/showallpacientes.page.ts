@@ -21,8 +21,15 @@ export class ShowallpacientesPage implements OnInit {
 
   getAllPacientes() {
     this.pacienteService.getAllPatients().subscribe(
-      res => this.patientsList = res.data,
+      res => {
+        this.patientsList = res.data
+        this.patientsList.reverse()
+      },
       error => console.log(error)
     )
+  }
+
+  segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
   }
 }

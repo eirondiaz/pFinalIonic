@@ -29,7 +29,6 @@
         <ion-input type="number" formControlName="monto" placeholder="Monto pagado"></ion-input>
         <ion-input type="text" formControlName="diagnostico" placeholder="Diagnóstico"></ion-input>
         <ion-input type="text" formControlName="nota" placeholder="Nota"></ion-input>
-        <!--<ion-input type="text" formControlName="foto_evidencia" placeholder="Evidencia Consulta"></ion-input>-->
         <ion-button class="but" expand="block" (click)="getPhoto()">Evidencia consulta</ion-button>
         <img [src]="image" *ngIf="image">
         <ion-button expand="block" [disabled]="consultaForm.invalid" shape="round" type="submit">
