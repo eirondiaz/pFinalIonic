@@ -21,44 +21,51 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
+    canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
   {
     path: 'profile',
+    canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
     path: 'changepass',
+    canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/changepass/changepass.module').then( m => m.ChangepassPageModule)
   },
   {
     path: 'updatedata',
+    canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/updatedata/updatedata.module').then( m => m.UpdatedataPageModule)
   },
   {
     path: 'showallpacientes',
+    canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/showallpacientes/showallpacientes.module').then( m => m.ShowallpacientesPageModule)
   },
   {
     path: 'showconsulta',
+    canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/showconsulta/showconsulta.module').then( m => m.ShowconsultaPageModule)
   },
   {
     path: 'registrarpaciente',
+    canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/registrarpaciente/registrarpaciente.module').then( m => m.RegistrarpacientePageModule)
   },
   {
     path: 'registrarvisita',
+    canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/registrarvisita/registrarvisita.module').then( m => m.RegistrarvisitaPageModule)
-  },  {
-    path: 'pacienteprofile',
-    loadChildren: () => import('./pages/pacienteprofile/pacienteprofile.module').then( m => m.PacienteprofilePageModule)
   },
 
 
 
-
 ];
+
+
+
 
 @NgModule({
   imports: [
