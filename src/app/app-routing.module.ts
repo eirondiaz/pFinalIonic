@@ -1,3 +1,4 @@
+import { PacienteprofilePageModule } from './pages/pacienteprofile/pacienteprofile.module';
 import { NotLoggedGuard } from './guards/not-logged.guard';
 import { LoggedGuard } from './guards/logged.guard';
 import { NgModule } from '@angular/core';
@@ -59,9 +60,11 @@ const routes: Routes = [
     canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/registrarvisita/registrarvisita.module').then( m => m.RegistrarvisitaPageModule)
   },
-
-
-
+  {
+    path: 'pacienteprofile',
+    canActivate: [NotLoggedGuard],
+    loadChildren: () => import('./pages/pacienteprofile/pacienteprofile.module').then( m => m.PacienteprofilePageModule)
+  }
 ];
 
 
