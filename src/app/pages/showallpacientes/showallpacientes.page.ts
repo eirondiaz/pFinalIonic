@@ -1,3 +1,4 @@
+import { Paciente } from './../../Models/Paciente';
 import { PacienteService } from './../../services/paciente.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./showallpacientes.page.scss'],
 })
 export class ShowallpacientesPage implements OnInit {
+
+  patientsList: Paciente[] = []
 
   constructor(
     private pacienteService: PacienteService
@@ -18,7 +21,7 @@ export class ShowallpacientesPage implements OnInit {
 
   getAllPacientes() {
     this.pacienteService.getAllPatients().subscribe(
-      res => console.log(res.data),
+      res => this.patientsList = res.data,
       error => console.log(error)
     )
   }

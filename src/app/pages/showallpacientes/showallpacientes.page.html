@@ -25,9 +25,6 @@
     </ion-col>
   </ion-row>
   <ion-list>
-    <app-cardpaciente></app-cardpaciente>
-    <app-cardpaciente></app-cardpaciente>
-    <app-cardpaciente></app-cardpaciente>
-    <app-cardpaciente></app-cardpaciente>
+    <app-cardpaciente *ngFor="let pac of patientsList"></app-cardpaciente>
   </ion-list>
 </ion-content>
