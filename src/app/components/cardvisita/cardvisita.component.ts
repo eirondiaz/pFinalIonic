@@ -13,6 +13,4 @@ export class CardvisitaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-
-
 }

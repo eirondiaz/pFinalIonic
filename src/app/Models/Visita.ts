@@ -6,4 +6,5 @@ export interface Visita {
     no_seguro?: string
     diagnostico?: string
     foto_evidencia?: string
+    fecha?: string
 }

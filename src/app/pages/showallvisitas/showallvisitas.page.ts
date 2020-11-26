@@ -10,7 +10,8 @@ import { VisitaService } from 'src/app/services/visita.service';
 })
 export class ShowallvisitasPage implements OnInit {
 
-  visitaList: Visita[] = [];
+  visitaList: Visita[] = []
+
   constructor( private visitaService: VisitaService  ) { }
 
   ngOnInit() {
@@ -20,6 +21,7 @@ export class ShowallvisitasPage implements OnInit {
   ionViewDidEnter(){
     this.getAllVisitas()
   }
+
   getAllVisitas(){
     this.visitaService.getAllVisitas()
       .subscribe(
@@ -30,6 +32,4 @@ export class ShowallvisitasPage implements OnInit {
         err =>console.log(err)
       )
   }
-
-
 }
