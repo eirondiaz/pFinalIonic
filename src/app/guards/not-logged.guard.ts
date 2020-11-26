@@ -12,22 +12,23 @@ export class NotLoggedGuard implements CanActivate {
     private storage: NativeStorage
   ) { }
 
-  canActivate(): boolean{
+  canActivate() {
     this.storage.getItem('token').then(
       val => {
-        if (!!val) {
-          return true
+        if (val === null) {
+          this.router.navigate(['/signin'])
+          return false
         }
       },
       error => {
-        if (!!localStorage.getItem('token')) {
-          return true
+        if (localStorage.getItem('token') === null) {
+          this.router.navigate(['/signin'])
+          return false
         }
       }
     )
-
-    this.router.navigate(['/signin'])
-    return false
+    
+    return true
   }
   
 }
