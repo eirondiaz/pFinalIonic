@@ -1,4 +1,5 @@
 <ion-header class="ion-no-border">
+  <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
   <ion-toolbar style="color: #00C8D5;">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/profile" style="color: #00C8D5;"></ion-back-button>
@@ -12,20 +13,20 @@
   <p class="ion-text-center">Modificar datos</p>
   <ion-card style="margin-top: 2;">
     <ion-card-content>
-     <form [formGroup]="dataForm" (ngSubmit)="onSubmit(dataForm.value)">
+     <form (submit)="onSubmit()">
       <div class="grid-container">
         <div>
           <ion-icon name="person" class="icon"></ion-icon>
         </div>           
-        <ion-input name="name" formControlName="nombre" placeholder="Nombre"></ion-input>
+        <ion-input name="name" [(ngModel)]="medico.nombre" placeholder="Nombre"></ion-input>
       </div>
       <div class="grid-container">
         <div>
           <ion-icon name="mail" class="icon"></ion-icon>
         </div>
-        <ion-input name="email" formControlName="correo" placeholder="Correo Electronico"></ion-input>
+        <ion-input name="email" [(ngModel)]="medico.correo" placeholder="Correo Electronico"></ion-input>
       </div>
-      <ion-button type="submit" [disabled]="dataForm.invalid" expand="block" shape="round">Modificar</ion-button>
+      <ion-button type="submit" expand="block" shape="round">Modificar</ion-button>
      </form>
     </ion-card-content>
   </ion-card>
