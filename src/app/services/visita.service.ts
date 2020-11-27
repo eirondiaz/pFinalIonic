@@ -30,7 +30,7 @@ export class VisitaService {
   }
 
   getVisitaById(id) {
-    return this.http.get<any>(this.URL + '/' + id)
+    return this.http.get<any>(this.URL + '/' + id + '?token=' + this.TOKEN)
   }
 
   updateVisita(id, data) {
@@ -38,6 +38,6 @@ export class VisitaService {
   }
 
   deleteVisita(id) {
-    return this.http.get<any>(this.URL + '/' + id)
+    return this.http.delete<any>(this.URL + '/' + id + '?token=' + this.TOKEN)
   }
 }

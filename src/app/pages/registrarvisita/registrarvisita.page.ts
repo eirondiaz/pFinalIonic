@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { VisitaService } from './../../services/visita.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Paciente } from './../../Models/Paciente';
@@ -24,7 +25,8 @@ export class RegistrarvisitaPage implements OnInit {
     private pacienteService: PacienteService,
     private _builder: FormBuilder,
     private visitaService: VisitaService,
-    private camera: Camera
+    private camera: Camera,
+    private router: Router
   ) { 
     this.consultaForm = this._builder.group({
       id_paciente: ['', Validators.required],
@@ -57,6 +59,7 @@ export class RegistrarvisitaPage implements OnInit {
       res => {
         this.loading = false
         this.consultaForm.reset()
+        this.router.navigate(['/showallvisitas'])
       },
       error => {
         this.loading = false

@@ -18,6 +18,6 @@
   </ion-segment>
 
   <ion-list>
-    <app-cardvisita [data]="visit" *ngFor="let visit of visitaList"></app-cardvisita>
+    <app-cardvisita [routerLink]="['/showconsulta', visit.id]" [data]="visit" *ngFor="let visit of visitaList"></app-cardvisita>
   </ion-list>
 </ion-content>

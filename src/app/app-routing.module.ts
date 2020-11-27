@@ -46,7 +46,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/showallpacientes/showallpacientes.module').then( m => m.ShowallpacientesPageModule)
   },
   {
-    path: 'showconsulta',
+    path: 'showconsulta/:id',
     canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/showconsulta/showconsulta.module').then( m => m.ShowconsultaPageModule)
   },
@@ -67,6 +67,7 @@ const routes: Routes = [
   },
   {
     path: 'showallvisitas',
+    canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/showallvisitas/showallvisitas.module').then( m => m.ShowallvisitasPageModule)
   }
 
