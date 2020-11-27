@@ -7,4 +7,5 @@ export interface Visita {
     diagnostico?: string
     foto_evidencia?: string
     fecha?: string
+    paciente?: any
 }

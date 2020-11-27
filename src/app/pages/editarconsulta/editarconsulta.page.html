@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
+  <ion-toolbar style="color: #00C8D5;">
+    <ion-buttons slot="start">
+      <ion-back-button [routerLink]="['/showconsulta', idPac]" style="color: #00C8D5;"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Visita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-card>
+    <ion-card-content>
+      <form (submit)="onSubmit()">
+        <ion-item lines="none">
+          <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="visita.fecha" name="motivo" min="2020-11-23" max="2021" placeholder="Fecha"></ion-datetime>
+        </ion-item>
+        <ion-input type="text" [(ngModel)]="visita.motivo" name="motivo" placeholder="Motivo de la consulta"></ion-input>
+        <ion-input type="number" [(ngModel)]="visita.no_seguro" name="seguro" placeholder="Número de seguro."></ion-input>
+        <ion-input type="number" [(ngModel)]="visita.monto" name="monto" placeholder="Monto pagado"></ion-input>
+        <ion-input type="text" [(ngModel)]="visita.diagnostico" name="diagnostico" placeholder="Diagnóstico"></ion-input>
+        <ion-input type="text" [(ngModel)]="visita.nota" name="nota" placeholder="Nota"></ion-input>
+        <ion-button class="but" expand="block" (click)="getPhoto()">Evidencia consulta</ion-button>
+        <img [src]="image" *ngIf="image">
+        <ion-button expand="block" shape="round" type="submit">
+          Confirmar Edición
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

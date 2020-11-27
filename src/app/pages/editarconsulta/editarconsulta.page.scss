@@ -1,0 +1,34 @@
+ion-input {
+    --background: #F3F3F3;
+    margin: 12px 0;
+    border-radius: 25px;
+    text-indent: 20px;
+}
+
+.but {
+    --background: #F3F3F3;
+    margin: 12px 0;
+    --border-radius: 25px;
+    text-indent: 20px;
+    color: #000;
+    font-weight: lighter;
+}
+
+ion-button {
+    --background: #00C8D5;
+    margin-top: 17px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+ion-img {
+    width: 50%; 
+    margin: auto; 
+    margin-top: 15px;
+}
+
+ion-item {
+    --background: #F3F3F3;
+    margin: 12px 0;
+    border-radius: 25px;
+}
