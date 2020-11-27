@@ -1,4 +1,5 @@
 <ion-header class="ion-no-border">
+  <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
   <ion-toolbar style="color: #00C8D5;">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/profile" style="color: #00C8D5;"></ion-back-button>
@@ -17,7 +18,7 @@
           <ion-input  type="password" formControlName="clave" name="oldPass" placeholder="Contraseña Actual"></ion-input>
         </div>
         <div>
-          <ion-input type="password" formControlName="newclave" name="newPass" placeholder="Nueva Contraseña"></ion-input>
+          <ion-input type="password" formControlName="nueva_clave" name="newPass" placeholder="Nueva Contraseña"></ion-input>
         </div>
         <div>
           <ion-input type="password" formControlName="repclave" name="reNewPass" placeholder="Repetir Nueva Contraseña"></ion-input>

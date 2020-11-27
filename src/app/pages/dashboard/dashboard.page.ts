@@ -1,3 +1,5 @@
+import { MedicoService } from './../../services/medico.service';
+import { Medico } from './../../models/Medico';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPage implements OnInit {
 
-  constructor() { }
+  medico: Medico = {}
+
+  constructor(
+    private medicoService: MedicoService
+  ) { }
 
   ngOnInit() {
+    this.getCurrentMedico()
   }
 
+  ionViewDidEnter(){
+    this.getCurrentMedico()
+  }
+
+  getCurrentMedico() {
+    this.medicoService.getCurrentDoctor('as').subscribe(
+      res => {
+        this.medico = res.data
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
 }

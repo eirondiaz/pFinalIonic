@@ -28,4 +28,8 @@ export class MedicoService {
   updateEmailName(data) {
     return this.http.put<any>(this.URL + '/updateEmailName?token=' + this.TOKEN, data)
   }
+
+  getCurrentDoctor(u) {
+    return this.http.get<any>(this.URL + '/getCurrentDoctor?token=' + this.TOKEN)
+  }
 }

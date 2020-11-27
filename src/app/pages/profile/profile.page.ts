@@ -1,6 +1,8 @@
+import { Medico } from './../../models/Medico';
+import { MedicoService } from './../../services/medico.service';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from './../../services/auth.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,13 +10,24 @@ import { Router } from '@angular/router';
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
 })
-export class ProfilePage {
+export class ProfilePage implements OnInit {
+
+  medico: Medico = {}
 
   constructor(
     private authService: AuthService,
     private alertCtrl: AlertController,
-    private router: Router
+    private router: Router,
+    private medicoService: MedicoService
   ) { }
+
+  ngOnInit() {
+    this.getCurrentMedico()
+  }
+
+  ionViewDidEnter(){
+    this.getCurrentMedico()
+  }
 
   async logOut() {
     const alert = await this.alertCtrl.create({
@@ -32,5 +45,16 @@ export class ProfilePage {
       }]
     })
     await alert.present()
+  }
+
+  getCurrentMedico() {
+    this.medicoService.getCurrentDoctor('as').subscribe(
+      res => {
+        this.medico = res.data
+      },
+      error => {
+        console.log(error)
+      }
+    )
   }
 }
