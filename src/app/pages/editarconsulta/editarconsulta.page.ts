@@ -36,10 +36,38 @@ export class EditarconsultaPage implements OnInit {
     this.getVisitaById()
   }
 
+  async createAlert() {
+    const alert = await this.alertCtrl.create({
+      header: 'Editar visita',
+      message: 'Estas seguro que deseas editar la visita?',
+      buttons: [{
+        text: 'Cancelar',
+        role: 'cancel'
+      }, {
+        text: 'Ok',
+        handler: () => {
+          this.loading = true
+          this.visitaService.updateVisita(this.visita.id, this.visita).subscribe(
+            res => {
+              this.loading = false
+              this.router.navigate(['/showallvisitas'])
+            },
+            error => {
+              this.loading = false
+              console.log(error)
+            }
+          )
+        }
+      }]
+    })
+    await alert.present()
+  }
+
   getVisitaById() {
     this.visitaService.getVisitaById(this.idPac).subscribe(
       res => {
-        this.visita = res.data
+        this.visita = res.data[0]
+        this.image = res.data[0].foto_evidencia
         console.log(res)
       },
       error => {
@@ -49,7 +77,8 @@ export class EditarconsultaPage implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.visita)
+    this.createAlert()
+    //console.log(this.visita[0])
   }
 
   getPhoto() {

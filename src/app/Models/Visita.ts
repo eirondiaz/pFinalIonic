@@ -1,3 +1,4 @@
+import { Paciente } from './Paciente';
 export interface Visita {
     id?: number
     nota?: string
@@ -7,5 +8,5 @@ export interface Visita {
     diagnostico?: string
     foto_evidencia?: string
     fecha?: string
-    paciente?: any
+    paciente?: Paciente
 }

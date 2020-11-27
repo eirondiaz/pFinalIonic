@@ -35,8 +35,8 @@ export class ShowconsultaPage implements OnInit {
   getVisitaById() {
     this.visitaService.getVisitaById(this.idPac).subscribe(
       res => {
-        this.visita = res.data
-        console.log(res)
+        this.visita = res.data[0]
+        console.log(this.visita)
       },
       error => {
         console.log(error)
