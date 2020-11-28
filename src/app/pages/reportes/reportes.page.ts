@@ -29,12 +29,10 @@ export class ReportesPage implements OnInit {
   }
 
   segmentChanged(ev: any) {
-    console.log(ev.target.value)
     this.selectedFrame = ev.target.value
   }
 
   fechaChange(ev) {
-    console.log('facha cambiada', this.fechaToFilter.substring(0, 10))
     this.visitaListFiltered = this.visitaList.filter(x => x.fecha.substring(0, 10) == this.fechaToFilter.substring(0, 10))
     console.log(this.visitaListFiltered)
   }

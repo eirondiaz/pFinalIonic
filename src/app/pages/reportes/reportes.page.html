@@ -24,6 +24,17 @@
     <ion-item lines="none">
       <ion-datetime (ionChange)="fechaChange($event)" [(ngModel)]="fechaToFilter" displayFormat="DD/MM/YYYY" placeholder="Fecha"></ion-datetime>
     </ion-item>
+
+    <ng-container *ngIf="visitaListFiltered.length !== 0; else vacio">
+      <ion-list>
+        <app-cardvisita [routerLink]="['/showconsulta', visit.id]" [data]="visit" *ngFor="let visit of visitaListFiltered"></app-cardvisita>
+      </ion-list>
+    </ng-container>
+
+    <ng-template #vacio>
+      <ion-img src="assets/img/notfound.svg"></ion-img>
+      <p style="color: #00C8D5; margin-top: 20px; font-size: 20px;" class="ion-text-center">No hay visitas en esa fecha</p>
+    </ng-template>
   </div>
 
   <!--FRAME DE ZODIACAL-->
