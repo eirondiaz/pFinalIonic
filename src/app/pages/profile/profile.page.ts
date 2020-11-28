@@ -27,6 +27,10 @@ export class ProfilePage implements OnInit {
     this.getCurrentMedico()
   }
 
+  ionViewDidEnter(){
+    this.getCurrentMedico()
+  }
+
   async logOut() {
     const alert = await this.alertCtrl.create({
       header: 'Cerrar Sesión',
