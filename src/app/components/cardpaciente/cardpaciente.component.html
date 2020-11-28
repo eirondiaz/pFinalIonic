@@ -16,10 +16,8 @@
                   <ion-text class="profession"><b>{{paciente.apellido}}</b></ion-text>
                 </div>
               </div>
-              <div class="col-6">
-                <button id="btn" class="btn bg-danger text-white"  color="danger">
-                  Upcoming
-                </button>
+              <div class="col-6" *ngIf="show">
+                <p style="color: #00C8D5;">Cantidad de Visitas: <b>{{paciente.total_visit}}</b></p>
               </div>
             </div>
           <div class="mt-1">
@@ -35,7 +33,5 @@
 
           </div>
         </div>
-
-
     </ion-card-content>
   </ion-card>

@@ -44,6 +44,8 @@
 
   <!--FRAME DE CANTIDAD-->
   <div *ngIf="selectedFrame === 'cantidad'">
-    <p>cantidad</p>
+    <ion-list>
+      <app-cardpaciente [show]="true" [data]="pac" *ngFor="let pac of pacienteList"></app-cardpaciente>
+    </ion-list>
   </div>
 </ion-content>

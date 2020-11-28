@@ -36,6 +36,6 @@
   </ion-segment>
 
   <ion-list>
-    <app-cardpaciente [routerLink]="['/pacienteprofile', pac.id]" [data]="pac" *ngFor="let pac of patientsList"></app-cardpaciente>
+    <app-cardpaciente [routerLink]="['/pacienteprofile', pac.id]" [show]="false" [data]="pac" *ngFor="let pac of patientsList"></app-cardpaciente>
   </ion-list>
 </ion-content>

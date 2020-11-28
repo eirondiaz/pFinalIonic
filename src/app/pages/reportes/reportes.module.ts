@@ -1,3 +1,4 @@
+import { CardpacienteComponent } from './../../components/cardpaciente/cardpaciente.component';
 import { CardvisitaComponent } from './../../components/cardvisita/cardvisita.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,6 +17,6 @@ import { ReportesPage } from './reportes.page';
     IonicModule,
     ReportesPageRoutingModule
   ],
-  declarations: [ReportesPage, CardvisitaComponent]
+  declarations: [ReportesPage, CardvisitaComponent, CardpacienteComponent]
 })
 export class ReportesPageModule {}

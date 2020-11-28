@@ -9,6 +9,7 @@ import { Paciente } from 'src/app/Models/Paciente';
 export class CardpacienteComponent implements OnInit {
 
   @Input('data') paciente: Paciente
+  @Input('show') show
 
   constructor() { }
 
