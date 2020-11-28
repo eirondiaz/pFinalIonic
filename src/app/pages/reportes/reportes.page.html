@@ -11,7 +11,7 @@
       <ion-label>Fecha</ion-label>
     </ion-segment-button>
     <ion-segment-button value="zodiacal">
-      <ion-label>Zodical</ion-label>
+      <ion-label>Zodiacal</ion-label>
     </ion-segment-button>
     <ion-segment-button value="cantidad">
       <ion-label>Cantidad</ion-label>
@@ -45,7 +45,7 @@
   <!--FRAME DE CANTIDAD-->
   <div *ngIf="selectedFrame === 'cantidad'">
     <ion-list>
-      <app-cardpaciente [show]="true" [data]="pac" *ngFor="let pac of pacienteList"></app-cardpaciente>
+      <app-cardpaciente [routerLink]="['/pacienteprofile', pac.id]" [show]="true" [data]="pac" *ngFor="let pac of pacienteList"></app-cardpaciente>
     </ion-list>
   </div>
 </ion-content>
