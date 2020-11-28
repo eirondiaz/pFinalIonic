@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Visita } from 'src/app/Models/Visita';
+import { Paciente } from 'src/app/Models/Paciente';
 
 @Component({
   selector: 'app-showconsulta',
@@ -14,6 +15,7 @@ export class ShowconsultaPage implements OnInit {
   idPac: any
 
   visita: Visita = {}
+  paciente: Paciente = {}
 
   loading: boolean = false
 
@@ -36,6 +38,7 @@ export class ShowconsultaPage implements OnInit {
     this.visitaService.getVisitaById(this.idPac).subscribe(
       res => {
         this.visita = res.data[0]
+        this.paciente = res.data[0].paciente
         console.log(this.visita)
       },
       error => {

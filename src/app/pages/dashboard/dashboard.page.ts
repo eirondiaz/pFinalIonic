@@ -16,7 +16,7 @@ export class DashboardPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getCurrentMedico()
+    //this.getCurrentMedico()
   }
 
   ionViewDidEnter(){
