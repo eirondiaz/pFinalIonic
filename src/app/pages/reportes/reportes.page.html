@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border">
+  <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
+  <ion-toolbar style="color: #00C8D5;">
+    <ion-title>Reportes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-segment style="width: 90%; margin: auto; --background: #E5FAFB" class="my-2" (ionChange)="segmentChanged($event)" value="fecha">
+    <ion-segment-button value="fecha">
+      <ion-label>Fecha</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="zodiacal">
+      <ion-label>Zodical</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="cantidad">
+      <ion-label>Cantidad</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!--FRAME DE FECHA-->
+  <div *ngIf="selectedFrame === 'fecha'">
+    <p class="mb-2 text-center">Selecciona una fecha para filtrar</p>
+    <ion-item lines="none">
+      <ion-datetime (ionChange)="fechaChange($event)" [(ngModel)]="fechaToFilter" displayFormat="DD/MM/YYYY" placeholder="Fecha"></ion-datetime>
+    </ion-item>
+  </div>
+
+  <!--FRAME DE ZODIACAL-->
+  <div *ngIf="selectedFrame === 'zodiacal'">
+    <p>zodiacal</p>
+  </div>
+
+  <!--FRAME DE CANTIDAD-->
+  <div *ngIf="selectedFrame === 'cantidad'">
+    <p>cantidad</p>
+  </div>
+</ion-content>

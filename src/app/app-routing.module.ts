@@ -74,7 +74,13 @@ const routes: Routes = [
     path: 'editarconsulta/:id',
     canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/editarconsulta/editarconsulta.module').then( m => m.EditarconsultaPageModule)
+  },
+  {
+    path: 'reportes',
+    canActivate: [NotLoggedGuard],
+    loadChildren: () => import('./pages/reportes/reportes.module').then( m => m.ReportesPageModule)
   }
+
 
 
 ];
