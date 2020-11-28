@@ -84,12 +84,15 @@ export class UpdatedataPage implements OnInit {
   }
 
   getCurrentMedico() {
+    this.loading = true
     this.medicoService.getCurrentDoctor('as').subscribe(
       res => {
+        this.loading = false
         this.medico = res.data
         this.currentCorreo = res.data.correo
       },
       error => {
+        this.loading = false
         console.log(error)
       }
     )

@@ -64,13 +64,16 @@ export class EditarconsultaPage implements OnInit {
   }
 
   getVisitaById() {
+    this.loading = true
     this.visitaService.getVisitaById(this.idPac).subscribe(
       res => {
+        this.loading = false
         this.visita = res.data[0]
         this.image = res.data[0].foto_evidencia
         console.log(res)
       },
       error => {
+        this.loading = false
         console.log(error)
       }
     )

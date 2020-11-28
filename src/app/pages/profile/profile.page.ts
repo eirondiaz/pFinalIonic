@@ -14,6 +14,8 @@ export class ProfilePage implements OnInit {
 
   medico: Medico = {}
 
+  loading: boolean = false
+
   constructor(
     private authService: AuthService,
     private alertCtrl: AlertController,
@@ -44,11 +46,14 @@ export class ProfilePage implements OnInit {
   }
 
   getCurrentMedico() {
+    this.loading = true
     this.medicoService.getCurrentDoctor('as').subscribe(
       res => {
+        this.loading = false
         this.medico = res.data
       },
       error => {
+        this.loading = false
         console.log(error)
       }
     )

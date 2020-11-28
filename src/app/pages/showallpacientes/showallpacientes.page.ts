@@ -11,6 +11,8 @@ export class ShowallpacientesPage implements OnInit {
 
   patientsList: Paciente[] = []
 
+  loading: boolean = false
+
   constructor(
     private pacienteService: PacienteService
   ) { }
@@ -24,12 +26,17 @@ export class ShowallpacientesPage implements OnInit {
   }
 
   getAllPacientes() {
+    this.loading = true
     this.pacienteService.getAllPatients().subscribe(
       res => {
+        this.loading = false
         this.patientsList = res.data
         this.patientsList.reverse()
       },
-      error => console.log(error)
+      error => {
+        this.loading = false
+        console.log(error)
+      }
     )
   }
 

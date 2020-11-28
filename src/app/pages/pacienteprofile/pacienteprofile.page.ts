@@ -34,13 +34,19 @@ export class PacienteprofilePage implements OnInit {
   }
 
   getPacienteById() {
+    this.loading = true
     this.pacienteService.getPatientById(this.idPac).subscribe(
       res => {
         if (res.ok) {
+          this.loading = false
           this.paciente = res.data
         }
+        this.loading = false
       },
-      error => console.log(error)
+      error => {
+        this.loading = false
+        console.log(error)
+      }
     )
   }
 
