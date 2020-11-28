@@ -18,7 +18,15 @@
     </ion-segment-button>
   </ion-segment>
 
-  <ion-list>
-    <app-cardvisita [routerLink]="['/showconsulta', visit.id]" [data]="visit" *ngFor="let visit of visitaList"></app-cardvisita>
-  </ion-list>
+  <ng-container *ngIf="visitaList.length !== 0; else vacio"> 
+    <ion-list>
+      <app-cardvisita [routerLink]="['/showconsulta', visit.id]" [data]="visit" *ngFor="let visit of visitaList"></app-cardvisita>
+    </ion-list>
+  </ng-container>
+
+  <ng-template #vacio>
+    <ion-img src="assets/img/notfound.svg"></ion-img>
+    <p style="color: #00C8D5; margin-top: 20px; font-size: 20px;" class="ion-text-center">No hay visitas registradas</p>
+  </ng-template>
+
 </ion-content>
