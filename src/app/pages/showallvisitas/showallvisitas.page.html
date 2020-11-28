@@ -19,6 +19,13 @@
   </ion-segment>
 
   <ng-container *ngIf="visitaList.length !== 0; else vacio"> 
+
+    <ion-fab routerLink="/registrarvisita" vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
     <ion-list>
       <app-cardvisita [routerLink]="['/showconsulta', visit.id]" [data]="visit" *ngFor="let visit of visitaList"></app-cardvisita>
     </ion-list>
