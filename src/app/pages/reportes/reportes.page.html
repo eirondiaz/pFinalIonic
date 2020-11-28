@@ -39,13 +39,23 @@
 
   <!--FRAME DE ZODIACAL-->
   <div *ngIf="selectedFrame === 'zodiacal'">
-    <p>zodiacal</p>
+    <p class="ion-text-center">Lista de pacientes con signo zodiacal</p>
+
+    <ng-container>
+      <ion-list>
+        <app-cardpacientezodiac [zodiaco]="getZodiaco(pac.fecha_nac)" [data]="pac" *ngFor="let pac of pacienteList"></app-cardpacientezodiac>
+      </ion-list>   
+    </ng-container>
   </div>
 
   <!--FRAME DE CANTIDAD-->
   <div *ngIf="selectedFrame === 'cantidad'">
-    <ion-list>
-      <app-cardpaciente [routerLink]="['/pacienteprofile', pac.id]" [show]="true" [data]="pac" *ngFor="let pac of pacienteList"></app-cardpaciente>
-    </ion-list>
+    <p class="ion-text-center">Lista de pacientes con cantidad de visitas</p>
+
+    <ng-container>    
+      <ion-list>
+        <app-cardpaciente [routerLink]="['/pacienteprofile', pac.id]" [show]="true" [data]="pac" *ngFor="let pac of pacienteList"></app-cardpaciente>
+      </ion-list>
+    </ng-container>
   </div>
 </ion-content>

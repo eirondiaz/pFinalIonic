@@ -9,5 +9,5 @@ export interface Paciente {
     sexo?: string
     fecha_nac?: string
     alergias?: string
-    total_visit: number
+    total_visit?: number
 }
