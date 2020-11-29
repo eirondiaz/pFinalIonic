@@ -5,4 +5,5 @@ export interface Medico {
     clave?: string
     pais?: string
     profesion?: string
+    foto?: string
 }

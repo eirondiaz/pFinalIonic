@@ -27,6 +27,7 @@ export class DashboardPage implements OnInit {
     this.medicoService.getCurrentDoctor('as').subscribe(
       res => {
         this.medico = res.data
+        console.log(this.medico)
       },
       error => {
         console.log(error)

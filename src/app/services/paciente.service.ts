@@ -29,7 +29,7 @@ export class PacienteService {
 
   //DEBO ARREGALR LO DEL TOKEN CON LA VARIABLE THIS.TOKEN
   getAllPatients() {
-    return this.http.get<any>(this.URL + '/patients?token=' + localStorage.getItem('token'))
+    return this.http.get<any>(this.URL + '/patients?token=' + this.TOKEN)
   }
 
   getPatientById(id) {

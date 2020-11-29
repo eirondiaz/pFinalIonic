@@ -9,12 +9,13 @@ export class MedicoService {
 
   URL:string = 'https://n7pec0.deta.dev/doctor'
 
-  TOKEN: string
+  TOKEN: string = ''
 
   constructor(
     private http: HttpClient,
     private storage: NativeStorage
   ) { 
+    this.TOKEN = ''
     this.storage.getItem('token').then(
       data => this.TOKEN = data,
       error => this.TOKEN = localStorage.getItem('token')
