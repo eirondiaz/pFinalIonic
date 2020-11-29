@@ -79,7 +79,11 @@ const routes: Routes = [
     path: 'reportes',
     canActivate: [NotLoggedGuard],
     loadChildren: () => import('./pages/reportes/reportes.module').then( m => m.ReportesPageModule)
+  },  {
+    path: 'acerca',
+    loadChildren: () => import('./pages/acerca/acerca.module').then( m => m.AcercaPageModule)
   }
+
 
 
 
