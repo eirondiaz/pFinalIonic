@@ -12,7 +12,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class UpdatedataPage implements OnInit {
 
-  medico = {}
+  medico = {
+    nombre: '',
+    correo: ''
+  }
   currentCorreo: string = ''
 
   loading: boolean = false
