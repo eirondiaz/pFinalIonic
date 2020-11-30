@@ -1,4 +1,4 @@
-import { Medico } from './../../models/Medico';
+//import { Medico } from './../../models/Medico';
 import { MedicoService } from './../../services/medico.service';
 import { AlertController } from '@ionic/angular';
 import { AuthService } from './../../services/auth.service';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class ProfilePage implements OnInit {
 
-  medico: Medico = {}
+  medico = {}
 
   loading: boolean = false
 

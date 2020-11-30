@@ -1,5 +1,5 @@
 import { MedicoService } from './../../services/medico.service';
-import { Medico } from './../../models/Medico';
+//import { Medico } from './../../models/Medico';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPage implements OnInit {
 
-  medico: Medico = {}
+  medico = {}
 
   constructor(
     private medicoService: MedicoService

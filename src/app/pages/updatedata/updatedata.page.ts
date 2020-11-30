@@ -3,7 +3,7 @@ import { AlertController, ToastController } from '@ionic/angular';
 import { MedicoService } from './../../services/medico.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Medico } from 'src/app/models/Medico';
+//import { Medico } from 'src/app/models/Medico';
 
 @Component({
   selector: 'app-updatedata',
@@ -12,7 +12,7 @@ import { Medico } from 'src/app/models/Medico';
 })
 export class UpdatedataPage implements OnInit {
 
-  medico: Medico = {}
+  medico = {}
   currentCorreo: string = ''
 
   loading: boolean = false
